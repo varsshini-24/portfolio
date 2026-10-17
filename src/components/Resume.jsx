@@ -7,7 +7,7 @@ import {
 import "./Resume.css";
 
 function Resume() {
-  const resumePath = "/resume/resume.pdf";
+  const resumePath = "/resume/Varsshini-Resume.pdf";
 
   return (
     <section className="resume-section" id="resume">

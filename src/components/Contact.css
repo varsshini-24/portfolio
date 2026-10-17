@@ -1,492 +1,283 @@
-/* =========================================
-   CERTIFICATIONS SECTION
-========================================= */
 
-.certifications-section {
-  width: 100%;
-  padding: 110px 0 120px;
-  background: #050505;
-  color: #ffffff;
+/* ===== Contact Section ===== */
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 6% 28px;
+  color: #f4f5ff;
+  background:
+    radial-gradient(
+      ellipse at 5% 15%,
+      rgba(100, 65, 200, 0.09),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 95% 50%,
+      rgba(55, 110, 230, 0.08),
+      transparent 35%
+    ),
+    #050507;
 }
 
-.certifications-container {
-  width: min(1400px, calc(100% - 80px));
+.contact-container {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+/* Header */
 
-/* =========================================
-   HEADER
-========================================= */
-
-.certifications-heading {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
-  margin-bottom: 35px;
+.contact-header {
+  max-width: 700px;
+  margin-bottom: 48px;
 }
 
-.certifications-number {
-  display: block;
-  margin-bottom: 28px;
-  font-size: 12px;
-  letter-spacing: 0.25em;
-  color: #666666;
-}
-
-.certifications-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 500;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-}
-
-.certifications-heading p {
-  max-width: 600px;
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.8;
-  letter-spacing: 0.13em;
-  color: #777777;
-}
-
-
-/* =========================================
-   TITLE
-========================================= */
-
-.certifications-title {
-  margin: 0 0 55px;
-  font-size: clamp(60px, 7vw, 105px);
-  line-height: 0.95;
-  font-weight: 400;
-  letter-spacing: -0.06em;
-  color: #ffffff;
-}
-
-
-/* =========================================
-   GRID
-========================================= */
-
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-
-/* =========================================
-   CARD
-========================================= */
-
-.certification-card {
-  min-width: 0;
-  min-height: 390px;
-  padding: 30px;
-
-  border: 1px solid #272727;
-  border-radius: 20px;
-
-  background: #080808;
-
-  display: flex;
-  flex-direction: column;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.certification-card:hover {
-  transform: translateY(-5px);
-  border-color: #4a4a4a;
-  background: #0b0b0b;
-}
-
-
-/* =========================================
-   CARD TOP
-========================================= */
-
-.certification-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 60px;
-}
-
-.certification-top span {
-  font-size: 13px;
-  color: #777777;
-}
-
-.certification-top-arrow {
-  color: #777777;
-
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-.certification-card:hover .certification-top-arrow {
-  transform: translate(4px, -4px);
-  color: #ffffff;
-}
-
-
-/* =========================================
-   CARD CONTENT
-========================================= */
-
-.certification-content {
-  flex: 1;
-}
-
-.certification-issuer {
-  margin: 0 0 20px;
-  font-size: 14px;
-  color: #777777;
-}
-
-.certification-content h3 {
-  margin: 0;
-
-  font-size: 21px;
-  line-height: 1.35;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-
-  color: #ffffff;
-}
-
-.certification-date {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  margin-top: 28px;
-
-  font-size: 13px;
-  color: #666666;
-}
-
-.certification-date svg {
-  flex-shrink: 0;
-}
-
-
-/* =========================================
-   VIEW CERTIFICATE BUTTON
-========================================= */
-
-.certificate-button {
-  width: 100%;
-  height: 54px;
-
-  padding: 0 17px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  border: 1px solid #303030;
-  border-radius: 9px;
-
-  background: transparent;
-
-  font-family: inherit;
-  font-size: 14px;
-
-  color: #ffffff;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.certificate-button:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #000000;
-}
-
-.certificate-button svg {
-  transition: transform 0.3s ease;
-}
-
-.certificate-button:hover svg {
-  transform: translate(3px, -3px);
-}
-
-
-/* =========================================
-   CERTIFICATE MODAL
-========================================= */
-
-.certificate-modal {
-  position: fixed;
-  inset: 0;
-
-  z-index: 99999;
-
-  width: 100%;
-  height: 100%;
-
-  padding: 25px;
-
-  background: rgba(0, 0, 0, 0.92);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* =========================================
-   MODAL CONTAINER
-========================================= */
-
-.certificate-modal-container {
-  width: min(1100px, 95vw);
-  height: min(90vh, 900px);
-
-  background: #111111;
-
-  border: 1px solid #2b2b2b;
-  border-radius: 16px;
-
-  overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
-}
-
-
-/* =========================================
-   MODAL HEADER
-========================================= */
-
-.certificate-modal-header {
-  min-height: 58px;
-
-  padding: 0 16px 0 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  border-bottom: 1px solid #292929;
-
-  background: #0c0c0c;
-}
-
-.certificate-modal-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  color: #ffffff;
-
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.certificate-modal-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-
-/* =========================================
-   DOWNLOAD BUTTON
-========================================= */
-
-.certificate-download {
-  height: 38px;
-
-  padding: 0 14px;
-
+.contact-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  width: 34px;
+  height: 28px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(120, 145, 255, 0.4);
+  border-radius: 9px;
+  color: #a8baff;
+  font-size: 11px;
+}
 
-  border: 1px solid #303030;
-  border-radius: 8px;
+.contact-label {
+  margin-bottom: 20px;
+  color: #92b8ff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
 
-  color: #ffffff;
-  background: transparent;
+.contact-title {
+  margin: 0;
+  font-size: clamp(38px, 5.5vw, 64px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
 
+.contact-title span {
+  background: linear-gradient(100deg, #b4a4ff, #82baff, #8ce6ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-description {
+  max-width: 510px;
+  margin-top: 22px;
+  color: #9b9bad;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Contact cards */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(150, 160, 210, 0.18);
+  border-radius: 15px;
+  background: linear-gradient(
+    145deg,
+    rgba(24, 24, 39, 0.8),
+    rgba(10, 10, 16, 0.8)
+  );
+  color: inherit;
   text-decoration: none;
-
-  font-size: 13px;
-
   transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.certificate-download:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+.contact-card:hover {
+  border-color: rgba(130, 145, 255, 0.48);
+  background: linear-gradient(
+    145deg,
+    rgba(36, 31, 62, 0.8),
+    rgba(12, 14, 26, 0.9)
+  );
+  box-shadow: 0 0 24px rgba(100, 90, 255, 0.1);
 }
 
-
-/* =========================================
-   CLOSE BUTTON
-========================================= */
-
-.certificate-close {
-  width: 38px;
-  height: 38px;
-
+.contact-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid #303030;
-  border-radius: 8px;
-
-  background: transparent;
-
-  color: #ffffff;
-
-  cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(130, 145, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(105, 105, 255, 0.09);
+  color: #aebcff;
 }
 
-.certificate-close:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-}
-
-
-/* =========================================
-   PDF VIEWER
-========================================= */
-
-.certificate-viewer {
+.contact-card-info {
   flex: 1;
-
-  width: 100%;
-  min-height: 0;
-
-  background: #222222;
-
-  overflow: hidden;
+  min-width: 0;
 }
 
-.certificate-viewer iframe {
-  width: 100%;
-  height: 100%;
-
-  border: none;
-
+.contact-card-info > span {
   display: block;
-
-  background: #ffffff;
+  margin-bottom: 8px;
+  color: #9292a9;
+  font-size: 11px;
+  letter-spacing: 0.7px;
 }
 
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1050px) {
-
-  .certifications-container {
-    width: min(900px, calc(100% - 50px));
-  }
-
-  .certifications-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+.contact-card-info h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #f0f0ff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
+.contact-arrow {
+  flex-shrink: 0;
+  color: #9caeff;
+  transition: transform 0.3s ease;
+}
 
-/* =========================================
-   MOBILE
-========================================= */
+.contact-card:hover .contact-arrow {
+  transform: translate(3px, -3px);
+}
 
-@media (max-width: 650px) {
+/* Social links */
 
-  .certifications-section {
-    padding: 80px 0;
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 43px;
+  padding: 0 16px;
+  border: 1px solid rgba(150, 160, 210, 0.2);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #c7c9df;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(135, 145, 255, 0.55);
+  background: rgba(105, 105, 255, 0.07);
+  box-shadow: 0 0 17px rgba(112, 100, 255, 0.1);
+  color: #b9d8ff;
+}
+
+/* Footer */
+
+.contact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 70px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(150, 160, 210, 0.15);
+}
+
+.contact-footer p {
+  margin: 0;
+  color: #77778e;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Keyboard accessibility */
+
+.contact-card:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid #9bafff;
+  outline-offset: 4px;
+}
+
+/* Tablet */
+
+@media (max-width: 760px) {
+  .contact-section {
+    padding: 78px 6% 24px;
   }
 
-  .certifications-container {
-    width: calc(100% - 35px);
-  }
-
-  .certifications-heading {
+  .contact-content {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 14px;
   }
 
-  .certifications-title {
-    font-size: 58px;
+  .contact-header {
     margin-bottom: 35px;
   }
 
-  .certifications-grid {
-    grid-template-columns: 1fr;
+  .contact-footer {
+    margin-top: 48px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 65px 5% 22px;
   }
 
-  .certification-card {
-    min-height: 350px;
-    padding: 25px;
+  .contact-title {
+    font-size: 39px;
+    letter-spacing: -1.7px;
   }
 
-
-  /* MODAL */
-
-  .certificate-modal {
-    padding: 10px;
+  .contact-description {
+    font-size: 13px;
   }
 
-  .certificate-modal-container {
-    width: 100%;
-    height: 94vh;
-    border-radius: 12px;
+  .contact-card {
+    gap: 12px;
+    padding: 18px 15px;
   }
 
-  .certificate-modal-header {
-    padding-left: 14px;
+  .contact-icon {
+    width: 42px;
+    height: 42px;
   }
 
-  .certificate-modal-title span {
-    max-width: 150px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .contact-card-info h3 {
+    font-size: 12px;
   }
 
-  .certificate-download {
-    width: 38px;
-    padding: 0;
+  .contact-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
-
-  .certificate-download span {
-    display: none;
-  }
-
 }

@@ -1,122 +1,143 @@
+
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Database,
+  BarChart3,
+  Code2,
+  Sparkles,
+} from "lucide-react";
 
 function Hero() {
   return (
     <section className="hero-section" id="home">
-
-      {/* Background grid */}
-      <div className="hero-grid"></div>
-
-      {/* Main content */}
-      <div className="hero-content">
-
-        <motion.div
-          className="hero-eyebrow"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <span className="status-dot"></span>
-          AVAILABLE FOR OPPORTUNITIES
-        </motion.div>
-
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.15,
-          }}
-        >
-          Hi, I'm
-          <span>Varsshini.</span>
-        </motion.h1>
-
-
-        <motion.div
-          className="hero-role"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.3,
-          }}
-        >
-          <span>DATA SCIENCE STUDENT</span>
-          <span className="hero-separator">/</span>
-          <span>ASPIRING DATA ANALYST</span>
-        </motion.div>
-
-
-        <motion.p
-          className="hero-description"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.45,
-          }}
-        >
-          I turn data into meaningful insights and build
-          practical technology solutions that solve
-          real-world problems.
-        </motion.p>
-
-
-        <motion.div
-          className="hero-actions"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.6,
-          }}
-        >
-
-          <a
-            href="#projects"
-            className="hero-button hero-button-primary"
-          >
-            View my work
-            <ArrowUpRight size={17} />
-          </a>
-
-          <a
-            href="#contact"
-            className="hero-button hero-button-secondary"
-          >
-            Let's connect
-          </a>
-
-        </motion.div>
-
+      <div className="aurora-background" aria-hidden="true">
+        <div className="aurora-glow aurora-purple" />
+        <div className="aurora-glow aurora-blue" />
+        <div className="aurora-glow aurora-cyan" />
+        <div className="aurora-grid" />
       </div>
 
+      <div className="hero-layout">
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="hero-eyebrow">
+            <span className="status-dot" />
+            OPEN TO LEARNING & OPPORTUNITIES
+          </div>
 
-      {/* Bottom information */}
-      <motion.div
-        className="hero-bottom"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 1,
-        }}
-      >
+          <h1>
+            Hi, I'm
+            <br />
+            <span className="hero-name">Varsshini.</span>
+          </h1>
 
-        <span>COIMBATORE, INDIA</span>
+          <div className="hero-role">
+            DATA SCIENCE STUDENT
+            <span className="hero-separator">/</span>
+            ASPIRING DATA ANALYST
+          </div>
 
-        <div className="hero-scroll">
-          <ArrowDown size={14} />
-          <span>SCROLL TO EXPLORE</span>
-        </div>
+          <p className="hero-description">
+            I turn data into meaningful insights and build practical
+            technology solutions to solve real-world problems.
+          </p>
 
-        <span>2026</span>
+          <div className="hero-actions">
+            <a href="#projects" className="hero-button hero-button-primary">
+              Explore my projects
+              <ArrowUpRight size={17} />
+            </a>
 
-      </motion.div>
+            <a href="#contact" className="hero-button hero-button-secondary">
+              Let's connect
+            </a>
+          </div>
 
+          <div className="hero-quick-skills">
+            <span>PYTHON</span>
+            <i />
+            <span>SQL</span>
+            <i />
+            <span>POWER BI</span>
+            <i />
+            <span>DATA ANALYTICS</span>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.94, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          aria-label="Decorative data science illustration"
+        >
+          <div className="visual-orbit orbit-one" />
+          <div className="visual-orbit orbit-two" />
+
+          <div className="visual-center">
+            <div className="visual-center-icon">
+              <BarChart3 size={34} strokeWidth={1.5} />
+            </div>
+            <span className="visual-center-label">DATA IN MOTION</span>
+            <span className="visual-center-caption">
+              Discover · Analyze · Build
+            </span>
+          </div>
+
+          <div className="visual-card visual-card-python">
+            <span className="visual-card-icon blue-icon">
+              <Code2 size={19} />
+            </span>
+            <span>
+              <strong>Python</strong>
+              <small>Data analysis</small>
+            </span>
+            <span className="visual-card-dot" />
+          </div>
+
+          <div className="visual-card visual-card-sql">
+            <span className="visual-card-icon violet-icon">
+              <Database size={19} />
+            </span>
+            <span>
+              <strong>SQL</strong>
+              <small>Data queries</small>
+            </span>
+            <span className="visual-card-dot" />
+          </div>
+
+          <div className="visual-card visual-card-insights">
+            <span className="visual-card-icon cyan-icon">
+              <Sparkles size={19} />
+            </span>
+            <span>
+              <strong>Insights</strong>
+              <small>From raw data</small>
+            </span>
+          </div>
+
+          <div className="visual-particle particle-one" />
+          <div className="visual-particle particle-two" />
+          <div className="visual-particle particle-three" />
+        </motion.div>
+      </div>
+
+      <div className="hero-bottom">
+        <span>DATA SCIENCE · ANALYTICS · TECHNOLOGY</span>
+
+        <a href="#about" className="hero-scroll">
+          <ArrowDown size={15} />
+          SCROLL TO EXPLORE
+        </a>
+
+        <span>PORTFOLIO / 2026</span>
+      </div>
     </section>
   );
 }

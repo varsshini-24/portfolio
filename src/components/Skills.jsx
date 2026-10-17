@@ -1,9 +1,19 @@
+
 import { motion } from "framer-motion";
+import {
+  BarChart3,
+  Code2,
+  Globe2,
+  Wrench,
+  ArrowUpRight,
+} from "lucide-react";
 
 const skillGroups = [
   {
     number: "01",
     title: "Data & Analytics",
+    description: "Turning raw data into meaningful insights.",
+    icon: BarChart3,
     skills: [
       "Power BI",
       "Excel",
@@ -18,35 +28,23 @@ const skillGroups = [
   {
     number: "02",
     title: "Programming",
-    skills: [
-      "Python",
-      "JavaScript",
-      "HTML",
-      "CSS",
-    ],
+    description: "Writing code to solve practical problems.",
+    icon: Code2,
+    skills: ["Python", "JavaScript", "HTML", "CSS"],
   },
   {
     number: "03",
     title: "Web Development",
-    skills: [
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "REST APIs",
-    ],
+    description: "Building applications and connecting data.",
+    icon: Globe2,
+    skills: ["React", "Node.js", "Express.js", "MongoDB", "REST APIs"],
   },
   {
     number: "04",
     title: "Tools & Platforms",
-    skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Streamlit",
-      "MySQL",
-      "SQLite",
-    ],
+    description: "Tools I use to develop and manage projects.",
+    icon: Wrench,
+    skills: ["Git", "GitHub", "VS Code", "Streamlit", "MySQL", "SQLite"],
   },
 ];
 
@@ -54,8 +52,6 @@ function Skills() {
   return (
     <section className="skills-section" id="skills">
       <div className="skills-container">
-
-        {/* Label */}
         <motion.div
           className="skills-label"
           initial={{ opacity: 0, y: 20 }}
@@ -66,79 +62,78 @@ function Skills() {
           <span>SKILLS & TECHNOLOGIES</span>
         </motion.div>
 
-
-        {/* Heading */}
         <motion.div
           className="skills-heading"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <h2>
-            Tools I
-            <span> work with.</span>
-          </h2>
+          <div>
+            <h2>
+              Tools I
+              <span> work with.</span>
+            </h2>
+            <p>
+              Technologies and tools I use to analyze data,
+              build applications, and create useful solutions.
+            </p>
+          </div>
 
-          <p>
-            Technologies and tools I use to analyze data,
-            build applications and create useful solutions.
-          </p>
+          <div className="skills-heading-note">
+            <span className="skills-heading-dot" />
+            CONTINUOUSLY LEARNING
+          </div>
         </motion.div>
 
-
-        {/* Skill groups */}
         <div className="skills-grid">
+          {skillGroups.map((group, index) => {
+            const Icon = group.icon;
 
-          {skillGroups.map((group, index) => (
-            <motion.div
-              className="skill-group"
-              key={group.number}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-            >
-
-              <div className="skill-group-top">
-
-                <span className="skill-number">
-                  {group.number}
-                </span>
-
-                <span className="skill-count">
-                  {String(group.skills.length).padStart(2, "0")}
-                </span>
-
-              </div>
-
-
-              <h3>
-                {group.title}
-              </h3>
-
-
-              <div className="skill-list">
-
-                {group.skills.map((skill) => (
-                  <div
-                    className="skill-item"
-                    key={skill}
-                  >
-                    <span>{skill}</span>
-                    <span className="skill-dot"></span>
+            return (
+              <motion.article
+                className="skill-group"
+                key={group.number}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+              >
+                <div className="skill-group-top">
+                  <div className="skill-icon">
+                    <Icon size={20} strokeWidth={1.7} />
                   </div>
-                ))}
 
-              </div>
+                  <span className="skill-number">{group.number}</span>
 
-            </motion.div>
-          ))}
+                  <span className="skill-count">
+                    {String(group.skills.length).padStart(2, "0")} SKILLS
+                  </span>
+                </div>
 
+                <h3>{group.title}</h3>
+                <p className="skill-description">{group.description}</p>
+
+                <div className="skill-list">
+                  {group.skills.map((skill) => (
+                    <span className="skill-item" key={skill}>
+                      <span className="skill-dot" />
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="skill-card-footer">
+                  <span>SKILL SET {group.number}</span>
+                  <ArrowUpRight size={16} />
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
